@@ -72,4 +72,38 @@ public class ThirdTaskTest {
         menu.main(new String[] {});
         assertEquals(null, io.getMessage());
     }
+
+    @Test
+    public void saveStlTest() {
+        var io = new FakeIo();
+        var menu = new My3D(io);
+        io.setMessage("load text.obj");
+        io.setMessage("move 10 0 0");
+        io.setMessage("load text.stl");
+        io.setMessage("move 0 10 0");
+        io.setMessage("load hex.stl");
+        io.setMessage("move 0 0 10");
+        io.setMessage("save scene.stl");
+        io.setMessage("remove");
+        io.setMessage("exit");
+        menu.main(new String[] {});
+        assertEquals(null, io.getMessage());
+    }
+
+    @Test
+    public void saveObjTest() {
+        var io = new FakeIo();
+        var menu = new My3D(io);
+        io.setMessage("load text.obj");
+        io.setMessage("move 10 0 0");
+        io.setMessage("load text.stl");
+        io.setMessage("move 0 10 0");
+        io.setMessage("load hex.stl");
+        io.setMessage("move 0 0 10");
+        io.setMessage("save scene.obj");
+        io.setMessage("remove");
+        io.setMessage("exit");
+        menu.main(new String[] {});
+        assertEquals(null, io.getMessage());
+    }
 }
